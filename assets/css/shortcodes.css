@@ -42,7 +42,7 @@
 */
 
 /* container */
-.themesflat-container {
+.novax-container {
   position: relative;
   margin-left: auto;
   margin-right: auto;
@@ -52,31 +52,31 @@
   max-width: 100%;
 }
 
-.themesflat-container.w1490 {
+.novax-container.w1490 {
   width: 1520px;
 }
 
-.themesflat-container.w1115 {
+.novax-container.w1115 {
   width: 1145px;
 }
 
-.themesflat-container.w1346 {
+.novax-container.w1346 {
   width: 1346px;
 }
 
-.themesflat-container.w1230 {
+.novax-container.w1230 {
   width: 1260px;
 }
 
-.themesflat-container.w1358 {
+.novax-container.w1358 {
   width: 1388px;
 }
 
-.themesflat-container.w730 {
+.novax-container.w730 {
   width: 760px;
 }
 
-.themesflat-container.w920 {
+.novax-container.w920 {
   width: 950px;
 }
 
@@ -1559,6 +1559,10 @@
   padding-top: 91px;
   padding-bottom: 114px;
   position: relative;
+  background-image: url('https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .bg-grid-line {

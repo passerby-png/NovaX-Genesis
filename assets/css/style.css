@@ -1,8 +1,8 @@
 /**
-  * Name: Open9 | NFT Marketplace HTML Template
-  * Version: 1.0.1
-  * Author: Themesflat
-  * Author URI: http://www.themesflat.com
+  * 名称: NovaX Genesis | NFT 市场
+  * 版本: 1.0.0
+  * 作者: NovaX Genesis Team
+  * 描述: 现代 NFT 市场平台
 */
 @import "../icon/icon.css";
 @import "shortcodes.css";
@@ -13,23 +13,23 @@
 @import "../font/font.css";
 @import "bootstrap.css";
 /**
-  	* Reset Browsers
-    * General
-	* Elements
-  	* Forms
-	* Typography
-	* Extra classes
-	* link style
-	* header
-    * footer
-    * header section
-    * mobile
-    * cusor
-    * preload
+  	* 重置浏览器
+    * 通用
+	* 元素
+  	* 表单
+	* 排版
+	* 额外类
+	* 链接样式
+	* 头部
+    * 页脚
+    * 头部区域
+    * 移动端
+    * 光标
+    * 预加载
 
 */
 
-/* Reset Browsers
+/* 重置浏览器
 -------------------------------------------------------------- */
 html,
 body,
@@ -220,7 +220,7 @@ select {
   max-width: 100%;
 }
 
-/* General
+/* 通用
 -------------------------------------------------------------- */
 
 body,
@@ -327,7 +327,7 @@ svg path {
   transition: all 0.3s ease-in-out;
 }
 
-/* Elements
+/* 元素
 -------------------------------------------------------------- */
 
 html {
@@ -449,7 +449,7 @@ p > video {
   margin-bottom: 0;
 }
 
-/* Forms
+/* 表单
 -------------------------------------------------------------- */
 /* Fixes */
 
@@ -832,7 +832,7 @@ input.style-2 {
   color: #8a8aa0;
 }
 
-/* Typography
+/* 排版
 -------------------------------------------------------------- */
 
 h1,
@@ -869,7 +869,7 @@ h6 {
   font-size: 15px;
 }
 
-/* Extra classes
+/* 额外类
 -------------------------------------------------------------- */
 .msg-success {
   background: linear-gradient(to right, #e250e5, #4b50e6, #e250e5);
@@ -1071,7 +1071,7 @@ label.error {
   height: 100%;
 }
 
-/* link style
+/* 链接样式
 -------------------------------------------------------------- */
 a {
   text-decoration: none;
@@ -1095,7 +1095,7 @@ a:focus {
   transition: all 0.3s ease-in-out;
 }
 
-/* Header
+/* 头部
 -------------------------------------------------------------- */
 .header_1 {
   position: relative;
@@ -1514,7 +1514,7 @@ a:focus {
   transform: translate3d(0, 7px, 0);
 }
 
-/* footer */
+/* 页脚 */
 #footer {
   padding: 60px 0 30px;
   background-color: #111;
@@ -1717,7 +1717,7 @@ a:focus {
   line-height: 19px;
 }
 
-/* heading-section */
+/* 头部区域 */
 .heading-section {
   display: flex;
   align-items: center;
@@ -1785,7 +1785,7 @@ a:focus {
   background-color: rgba(22, 22, 22, 0.1);
 }
 
-/* section-menu-left */
+/* 左侧菜单 */
 .section-menu-left {
   display: flex;
   flex-direction: column;
@@ -2108,7 +2108,7 @@ a:focus {
   visibility: visible;
 }
 
-/* canvas */
+/* 画布 */
 .canvas-nav-wrap .overlay-canvas-nav {
   cursor: url(../images/close.svg), auto;
   content: "";
@@ -2179,7 +2179,7 @@ a:focus {
   cursor: pointer;
 }
 
-/* mobile header */
+/* 移动端头部 */
 /* ------------------------------------ */
 .mobile-nav-wrap .overlay-mobile-nav {
   cursor: url(../images/close.svg), auto;
@@ -2253,7 +2253,7 @@ a:focus {
   cursor: pointer;
 }
 
-/* menu-mobile-menu */
+/* 移动菜单 */
 #menu-mobile-menu {
   margin-top: 15px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -2332,7 +2332,7 @@ a:focus {
   font-weight: 500;
 }
 
-/*Header fixed
+/* 头部固定
 -------------------------------- */
 .header_1.is-fixed {
   position: fixed;
@@ -2357,11 +2357,11 @@ a:focus {
   height: 87px;
 }
 
-.header_1.is-fixed.is-small .themesflat-container {
+.header_1.is-fixed.is-small .novax-container {
   padding: 15px;
 }
 
-/* preload */
+/* 预加载 */
 .preload-container {
   position: fixed;
   top: 0px;
@@ -2481,7 +2481,7 @@ a:focus {
   transition-timing-function: linear;
 }
 
-/* cursor
+/* 光标
 ------------------------------------------------------ */
 .tf-mouse {
   position: fixed;

@@ -1,0 +1,447 @@
+/**
+  * 名称: 组件样式
+  * 描述: 包含组件相关的样式，如按钮、卡片、表单等
+*/
+
+/* 按钮
+-------------------------------------------------------------- */
+.tf-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.tf-button.style-1 {
+  background: #ddf247;
+  color: #161616;
+}
+
+.tf-button.style-1:hover {
+  background: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(221, 242, 71, 0.3);
+}
+
+.tf-button.style-1.active {
+  background: #222;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.tf-button.style-1.active:hover {
+  background: #333;
+}
+
+.tf-button i {
+  margin-left: 10px;
+  transition: all 0.3s ease;
+}
+
+.tf-button:hover i {
+  transform: translateX(5px);
+}
+
+.tf-button.h50 {
+  height: 50px;
+}
+
+.tf-button.w190 {
+  width: 190px;
+}
+
+.tf-button.w-100 {
+  width: 100%;
+}
+
+/* 卡片
+-------------------------------------------------------------- */
+.widget-box-icon {
+  padding: 60px 0;
+}
+
+.heading-section-1 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.tf-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 16px;
+}
+
+.heading-section-1 p {
+  font-size: 18px;
+  color: #7a798a;
+  margin-bottom: 40px;
+}
+
+/* 表单组件
+-------------------------------------------------------------- */
+.widget-login {
+  background: #222;
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.comment-form {
+  margin-bottom: 30px;
+}
+
+.fieldset {
+  margin-bottom: 20px;
+}
+
+.fieldset label {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.fieldset input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #333;
+  background: #161616;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+}
+
+.fieldset input:focus {
+  outline: none;
+  border-color: #ddf247;
+  box-shadow: 0 0 0 2px rgba(221, 242, 71, 0.2);
+}
+
+.password-input {
+  padding-right: 50px !important;
+}
+
+.password-addon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7a798a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.password-addon:hover {
+  color: #ddf247;
+}
+
+.widget-category-checkbox {
+  margin-top: 15px;
+}
+
+.widget-category-checkbox label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #7a798a;
+  cursor: pointer;
+}
+
+.widget-category-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.btn-checkbox {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 1px solid #333;
+  border-radius: 3px;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.widget-category-checkbox input[type="checkbox"]:checked + .btn-checkbox {
+  background: #ddf247;
+  border-color: #ddf247;
+}
+
+.widget-category-checkbox input[type="checkbox"]:checked + .btn-checkbox:after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #161616;
+  font-weight: bold;
+}
+
+.btn-submit {
+  margin-top: 30px;
+}
+
+/* 其他登录选项
+-------------------------------------------------------------- */
+.other {
+  text-align: center;
+  margin: 30px 0;
+  position: relative;
+}
+
+.other:before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #333;
+}
+
+.other:after {
+  content: '或继续';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #222;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #7a798a;
+}
+
+.login-other {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.login-other-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  background: #161616;
+  color: #fff;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.login-other-item:hover {
+  border-color: #ddf247;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(221, 242, 71, 0.2);
+}
+
+.login-other-item img {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+.no-account {
+  text-align: center;
+  font-size: 14px;
+  color: #7a798a;
+}
+
+.no-account a {
+  color: #ddf247;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.no-account a:hover {
+  color: #fff;
+}
+
+/* 进度条
+-------------------------------------------------------------- */
+.progress-wrap {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: rgba(221, 242, 71, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 999;
+  transition: all 0.3s ease;
+}
+
+.progress-wrap:hover {
+  background: rgba(221, 242, 71, 0.2);
+  transform: scale(1.1);
+}
+
+.progress-circle {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.progress-circle path {
+  fill: none;
+  stroke: #ddf247;
+  stroke-width: 3;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 0.3s ease;
+}
+
+/* 页面标题
+-------------------------------------------------------------- */
+.flat-pages-title {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.widget-bg-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.bg-grid-line {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bg-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.pages-title {
+  position: relative;
+  z-index: 1;
+}
+
+.pages-title .content {
+  text-align: center;
+}
+
+.pages-title h1 {
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.pages-title p {
+  font-size: 18px;
+  color: #7a798a;
+  margin-bottom: 30px;
+}
+
+.flat-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.icon-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.icon-background img {
+  position: absolute;
+  opacity: 0.1;
+  animation: float 6s ease-in-out infinite;
+}
+
+.icon-background .item1 {
+  top: 20%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.icon-background .item2 {
+  top: 60%;
+  right: 15%;
+  animation-delay: 2s;
+}
+
+.icon-background .item3 {
+  bottom: 20%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* 加载动画
+-------------------------------------------------------------- */
+.wow {
+  visibility: hidden;
+}
+
+/* 滚动动画
+-------------------------------------------------------------- */
+.counter-scroll {
+  overflow-x: hidden;
+}
+
+/* 响应式组件
+-------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .widget-login {
+    padding: 30px;
+  }
+  
+  .tf-title {
+    font-size: 28px;
+  }
+  
+  .pages-title h1 {
+    font-size: 36px;
+  }
+  
+  .flat-button {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .tf-button.w190 {
+    width: 100%;
+  }
+}

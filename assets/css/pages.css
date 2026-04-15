@@ -1,0 +1,480 @@
+/**
+  * 名称: 页面样式
+  * 描述: 包含页面特定的样式，如首页、探索页、NFT 详情页等
+*/
+
+/* 首页
+-------------------------------------------------------------- */
+.home-1 {
+  position: relative;
+}
+
+/* 探索页
+-------------------------------------------------------------- */
+.explore-page {
+  padding: 60px 0;
+}
+
+.explore-filter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  border-radius: 20px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+  background: #ddf247;
+  color: #161616;
+  border-color: #ddf247;
+}
+
+.sort-select {
+  padding: 8px 16px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: #ddf247;
+}
+
+.explore-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.explore-item {
+  background: #222;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.explore-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+.explore-item-image {
+  position: relative;
+  overflow: hidden;
+}
+
+.explore-item-image img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  transition: all 0.3s ease;
+}
+
+.explore-item:hover .explore-item-image img {
+  transform: scale(1.1);
+}
+
+.explore-item-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.7) 100%);
+  opacity: 0;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: flex-end;
+  padding: 20px;
+}
+
+.explore-item:hover .explore-item-overlay {
+  opacity: 1;
+}
+
+.explore-item-info {
+  padding: 20px;
+}
+
+.explore-item-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.explore-item-creator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.creator-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.creator-name {
+  font-size: 14px;
+  color: #7a798a;
+}
+
+.explore-item-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-info {
+  display: flex;
+  align-items: center;
+}
+
+.price-label {
+  font-size: 12px;
+  color: #7a798a;
+  margin-right: 5px;
+}
+
+.price-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.price-token {
+  font-size: 12px;
+  color: #7a798a;
+  margin-left: 5px;
+}
+
+.bid-button {
+  padding: 6px 12px;
+  background: #ddf247;
+  color: #161616;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.bid-button:hover {
+  background: #fff;
+}
+
+/* NFT 详情页
+-------------------------------------------------------------- */
+.nft-detail-page {
+  padding: 60px 0;
+}
+
+.nft-detail-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.nft-detail-image {
+  background: #222;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+
+.nft-detail-image img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.nft-detail-info {
+  background: #222;
+  border-radius: 8px;
+  padding: 30px;
+}
+
+.nft-detail-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.nft-detail-creator {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nft-detail-creator img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.creator-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.creator-username {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.creator-address {
+  font-size: 12px;
+  color: #7a798a;
+}
+
+.nft-detail-price {
+  margin-bottom: 20px;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.price-section-label {
+  font-size: 14px;
+  color: #7a798a;
+}
+
+.price-section-value {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.nft-detail-description {
+  margin-bottom: 20px;
+}
+
+.description-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.description-content {
+  font-size: 14px;
+  color: #7a798a;
+  line-height: 20px;
+}
+
+.nft-detail-actions {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.action-button {
+  flex: 1;
+  padding: 15px;
+  border-radius: 4px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.action-button.primary {
+  background: #ddf247;
+  color: #161616;
+}
+
+.action-button.primary:hover {
+  background: #fff;
+}
+
+.action-button.secondary {
+  background: transparent;
+  color: #fff;
+  border: 1px solid #333;
+}
+
+.action-button.secondary:hover {
+  border-color: #ddf247;
+  color: #ddf247;
+}
+
+.nft-detail-properties {
+  margin-top: 30px;
+}
+
+.properties-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.property-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.property-item:last-child {
+  border-bottom: none;
+}
+
+.property-name {
+  font-size: 14px;
+  color: #7a798a;
+}
+
+.property-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #fff;
+}
+
+/* 登录页
+-------------------------------------------------------------- */
+.login-page {
+  padding: 60px 0;
+}
+
+/* 注册页
+-------------------------------------------------------------- */
+.signup-page {
+  padding: 60px 0;
+}
+
+/* 市场钱包页
+-------------------------------------------------------------- */
+.market-page {
+  padding: 60px 0;
+}
+
+#market-header {
+  background: #222;
+  padding: 20px 0;
+  border-bottom: 1px solid #333;
+  position: sticky;
+  top: 80px;
+  z-index: 999;
+}
+
+.market-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.admin_active {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.popup-notification {
+  position: relative;
+}
+
+.notification {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #333;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.notification:hover {
+  background: #ddf247;
+  color: #161616;
+}
+
+.notification svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* 响应式页面
+-------------------------------------------------------------- */
+@media (max-width: 992px) {
+  .nft-detail-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .explore-filter {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .filter-buttons {
+    width: 100%;
+  }
+  
+  .filter-button {
+    flex: 1;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .explore-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .nft-detail-info {
+    padding: 20px;
+  }
+  
+  .nft-detail-actions {
+    flex-direction: column;
+  }
+  
+  .market-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .admin_active {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
