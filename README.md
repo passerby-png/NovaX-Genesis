@@ -12,11 +12,11 @@
 
 ### 🔹 **首页预览**  
 这是 NFT 市场的主登陆页面。它具有 **现代且干净的 UI**，带有引人注目的动画效果。  
-![Home Page](https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/1.png)
+![Home Page](https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/4.png)
 
 ### 🔹 **功能与动画**  
 由 **GSAP 和 ScrollTrigger** 提供支持的流畅动画，使浏览体验更具互动性和吸引力。  
-![Features](https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/2.png)  
+![Features](https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/5.png)  
 
 ### 🔹 **UI 元素**  
 为喜欢时尚、现代且视觉吸引力体验的用户提供美丽的 **暗黑模式 UI**。  
