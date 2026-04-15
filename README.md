@@ -12,15 +12,15 @@
 
 ### 🔹 **首页预览**  
 这是 NFT 市场的主登陆页面。它具有 **现代且干净的 UI**，带有引人注目的动画效果。  
-![Home Page](https://github.com/AHMAD-JX/NFTAI-Marketplace-Template/blob/891395f0d483178c647e4e9b7256c1a32d372d93/assets/images/1.png)  
+![Home Page](https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/1.png)
 
 ### 🔹 **功能与动画**  
 由 **GSAP 和 ScrollTrigger** 提供支持的流畅动画，使浏览体验更具互动性和吸引力。  
-![Features](https://github.com/AHMAD-JX/NFTAI-Marketplace-Template/blob/891395f0d483178c647e4e9b7256c1a32d372d93/assets/images/2.png)  
+![Features](https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/2.png)  
 
 ### 🔹 **UI 元素**  
 为喜欢时尚、现代且视觉吸引力体验的用户提供美丽的 **暗黑模式 UI**。  
-![Dark Mode](https://github.com/AHMAD-JX/NFTAI-Marketplace-Template/blob/891395f0d483178c647e4e9b7256c1a32d372d93/assets/images/3.png)  
+![Dark Mode](https://mp-0fe18b0e-4a6b-4018-aa0c-b61057cc8a40.cdn.bspapp.com/NavoX-Genesis/3.png)  
 
 ---
 
@@ -63,7 +63,7 @@
 要开始使用，您需要将项目从 GitHub 克隆到本地机器。打开终端或命令提示符并运行：  
 
 ```sh
-git clone https://github.com/AHMAD-JX/NFTAI-Marketplace-Template.git
+git clone https://github.com/passerby-png/NovaX-Genesis.git
 ```
 
 这将在您的计算机上创建仓库的本地副本。  
@@ -72,7 +72,7 @@ git clone https://github.com/AHMAD-JX/NFTAI-Marketplace-Template.git
 完成后，导航到项目文件夹：  
 
 ```sh
-cd NFTAI-Marketplace-Template
+cd NovaX-Genesis
 ```
 
 现在，只需在浏览器中打开 `index.html` 文件即可查看项目。您也可以在 VS Code 中使用 **Live Server** 获得更好的开发体验。  
