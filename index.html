@@ -37,7 +37,71 @@
   </div>
 
   <div id="wrapper">
-    <div id="page" class="pt-40 home-1">
+    <!-- 科技感流星背景 -->
+    <canvas id="meteorCanvas" class="meteor-canvas"></canvas>
+    <!-- 时光穿梭效果 - 左侧 -->
+    <div class="time-warp left">
+      <div class="main-beam"></div>
+      <div class="secondary-beam"></div>
+      <div class="secondary-beam"></div>
+      <div class="grid-lines">
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="vertical-line near"></div>
+        <div class="vertical-line mid"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line near"></div>
+        <div class="vertical-line mid"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line near"></div>
+      </div>
+      <div class="grid-background"></div>
+      <div class="glow-effect"></div>
+      <div class="particle" style="top: 20%; left: 20%; animation-delay: 0s;"></div>
+      <div class="particle" style="top: 40%; left: 30%; animation-delay: 0.5s;"></div>
+      <div class="particle" style="top: 60%; left: 40%; animation-delay: 1s;"></div>
+      <div class="particle" style="top: 80%; left: 50%; animation-delay: 1.5s;"></div>
+      <div class="particle" style="top: 30%; left: 60%; animation-delay: 2s;"></div>
+      <div class="particle" style="top: 50%; left: 70%; animation-delay: 2.5s;"></div>
+      <div class="particle" style="top: 70%; left: 80%; animation-delay: 3s;"></div>
+    </div>
+    <!-- 时光穿梭效果 - 右侧 -->
+    <div class="time-warp right">
+      <div class="main-beam"></div>
+      <div class="secondary-beam"></div>
+      <div class="secondary-beam"></div>
+      <div class="grid-lines">
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="horizontal-line"></div>
+        <div class="vertical-line near"></div>
+        <div class="vertical-line mid"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line near"></div>
+        <div class="vertical-line mid"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line far"></div>
+        <div class="vertical-line near"></div>
+      </div>
+      <div class="grid-background"></div>
+      <div class="glow-effect"></div>
+      <div class="particle" style="top: 20%; right: 20%; animation-delay: 0s;"></div>
+      <div class="particle" style="top: 40%; right: 30%; animation-delay: 0.5s;"></div>
+      <div class="particle" style="top: 60%; right: 40%; animation-delay: 1s;"></div>
+      <div class="particle" style="top: 80%; right: 50%; animation-delay: 1.5s;"></div>
+      <div class="particle" style="top: 30%; right: 60%; animation-delay: 2s;"></div>
+      <div class="particle" style="top: 50%; right: 70%; animation-delay: 2.5s;"></div>
+      <div class="particle" style="top: 70%; right: 80%; animation-delay: 3s;"></div>
+    </div>
+    <div id="page" class="home-1">
       <header id="header_main" class="header_1 header-fixed">
         <div class="novax-container">
           <div class="row">
@@ -1332,13 +1396,18 @@
             <h2 class="tf-title">今日顶级收藏家购买</h2>
           </div>
           <div class="featured swiper-container autoslider1" data-swiper='{
-                        "loop": false,
+                        "loop": true,
                         "spaceBetween": 28,
                         "slidesPerView": "auto",
                         "centeredSlides": false,
                         "observer": true,
                         "observeParents": true,
                         "grabCursor": true,
+                        "autoplay": {
+                            "delay": 0,
+                            "disableOnInteraction": false
+                        },
+                        "speed": 5000,
                         "breakpoints": {
                             "0": { 
                                 "spaceBetween": 20
@@ -1478,13 +1547,19 @@
             </div>
           </div>
           <div class="featured mt-17 swiper-container autoslider2" data-swiper='{
-                        "loop": false,
+                        "loop": true,
                         "spaceBetween": 28,
                         "slidesPerView": "auto",
                         "centeredSlides": false,
                         "observer": true,
                         "observeParents": true,
                         "grabCursor": true,
+                        "autoplay": {
+                            "delay": 0,
+                            "disableOnInteraction": false,
+                            "reverseDirection": false
+                        },
+                        "speed": 5000,
                         "breakpoints": {
                             "0": { 
                                 "spaceBetween": 20
@@ -2204,7 +2279,7 @@
     </div>
     <!-- /#page -->
 
-    <!-- Modal Popup Bid -->
+    <!--   订阅弹窗 -->
     <div class="modal fade popup" id="popup_bid" tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -2230,7 +2305,6 @@
       </div>
     </div>
   </div>
-  <!-- /#wrapper -->
 
   <div class="tf-mouse tf-mouse-outer"></div>
   <div class="tf-mouse tf-mouse-inner"></div>
@@ -2262,6 +2336,194 @@
   <script src="assets/js/tsparticles.min.js"></script>
   <script src="assets/js/tsparticles.js"></script>
   <script src="assets/js/main.js"></script>
+  <script>
+    <!-- 科技感流星效果 -->
+    (function() {
+      const canvas = document.getElementById('meteorCanvas');
+      if (!canvas) return;
+      
+      const ctx = canvas.getContext('2d');
+      
+      
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      
+      resizeCanvas();
+      window.addEventListener('resize', resizeCanvas);
+      
+      // 配置参数
+      const config = {
+        meteorCount: 20,
+        particleCount: 50,
+        meteorSpeed: { min: 5, max: 15 },
+        meteorLength: { min: 50, max: 200 },
+        meteorWidth: { min: 1, max: 3 },
+        particleSize: { min: 1, max: 2 },
+        spawnInterval: 200,
+        colors: [
+          { start: 'rgba(255, 255, 255, 1)', end: 'rgba(59, 130, 246, 0.2)' },
+          { start: 'rgba(255, 255, 255, 1)', end: 'rgba(219, 39, 119, 0.2)' },
+          { start: 'rgba(255, 255, 255, 1)', end: 'rgba(168, 85, 247, 0.2)' },
+          { start: 'rgba(255, 255, 255, 1)', end: 'rgba(221, 242, 71, 0.2)' }
+        ]
+      };
+      
+      const meteors = [];
+      const particles = [];
+      
+      function random(min, max) {
+        return Math.random() * (max - min) + min;
+      }
+      
+      function createMeteor() {
+        if (meteors.length < config.meteorCount) {
+          const color = config.colors[Math.floor(random(0, config.colors.length))];
+          
+          meteors.push({
+            x: random(-100, canvas.width),
+            y: random(-100, 100),
+            angle: random(30, 60),
+            speed: random(config.meteorSpeed.min, config.meteorSpeed.max),
+            length: random(config.meteorLength.min, config.meteorLength.max),
+            width: random(config.meteorWidth.min, config.meteorWidth.max),
+            color: color,
+            opacity: 1,
+            trailLength: random(50, 100)
+          });
+        }
+      }
+      
+      function createParticle(x, y) {
+        if (particles.length < config.particleCount) {
+          particles.push({
+            x: x,
+            y: y,
+            vx: random(-2, 2),
+            vy: random(-2, 2),
+            size: random(config.particleSize.min, config.particleSize.max),
+            opacity: random(0.3, 0.8),
+            life: random(30, 60)
+          });
+        }
+      }
+      
+      function updateMeteors() {
+        for (let i = meteors.length - 1; i >= 0; i--) {
+          const meteor = meteors[i];
+          
+          const dx = Math.cos(meteor.angle * Math.PI / 180) * meteor.speed;
+          const dy = Math.sin(meteor.angle * Math.PI / 180) * meteor.speed;
+          
+          meteor.x += dx;
+          meteor.y += dy;
+          meteor.opacity -= 0.005;
+          
+          if (meteor.x > canvas.width + 100 || meteor.y > canvas.height + 100 || meteor.opacity <= 0) {
+            meteors.splice(i, 1);
+            for (let j = 0; j < 5; j++) {
+              createParticle(meteor.x, meteor.y);
+            }
+          }
+        }
+      }
+      
+      function updateParticles() {
+        for (let i = particles.length - 1; i >= 0; i--) {
+          const particle = particles[i];
+          
+          particle.x += particle.vx;
+          particle.y += particle.vy;
+          particle.life--;
+          particle.opacity -= 0.02;
+          
+          if (particle.life <= 0 || particle.opacity <= 0) {
+            particles.splice(i, 1);
+          }
+        }
+      }
+      
+      function drawMeteors() {
+        meteors.forEach(meteor => {
+          ctx.save();
+          
+          const endX = meteor.x - Math.cos(meteor.angle * Math.PI / 180) * meteor.length;
+          const endY = meteor.y - Math.sin(meteor.angle * Math.PI / 180) * meteor.length;
+          
+          const gradient = ctx.createLinearGradient(meteor.x, meteor.y, endX, endY);
+          gradient.addColorStop(0, 'rgba(0, 0, 0, 0)');
+          gradient.addColorStop(0.1, meteor.color.start);
+          gradient.addColorStop(0.9, meteor.color.end);
+          gradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          
+          ctx.globalAlpha = meteor.opacity;
+          ctx.lineWidth = meteor.width;
+          ctx.strokeStyle = gradient;
+          ctx.shadowBlur = 20;
+          ctx.shadowColor = meteor.color.start;
+          
+          ctx.beginPath();
+          ctx.moveTo(meteor.x, meteor.y);
+          ctx.lineTo(endX, endY);
+          ctx.stroke();
+          
+          const trailEndX = endX - Math.cos(meteor.angle * Math.PI / 180) * meteor.trailLength;
+          const trailEndY = endY - Math.sin(meteor.angle * Math.PI / 180) * meteor.trailLength;
+          
+          const trailGradient = ctx.createLinearGradient(endX, endY, trailEndX, trailEndY);
+          trailGradient.addColorStop(0, meteor.color.end);
+          trailGradient.addColorStop(1, 'rgba(0, 0, 0, 0)');
+          
+          ctx.lineWidth = meteor.width * 0.5;
+          ctx.strokeStyle = trailGradient;
+          ctx.shadowBlur = 10;
+          
+          ctx.beginPath();
+          ctx.moveTo(endX, endY);
+          ctx.lineTo(trailEndX, trailEndY);
+          ctx.stroke();
+          
+          ctx.restore();
+        });
+      }
+      
+      function drawParticles() {
+        particles.forEach(particle => {
+          ctx.save();
+          ctx.globalAlpha = particle.opacity;
+          ctx.fillStyle = 'rgba(255, 255, 255, 1)';
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = 'rgba(255, 255, 255, 0.8)';
+          
+          ctx.beginPath();
+          ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+          ctx.fill();
+          
+          ctx.restore();
+        });
+      }
+      
+      function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        updateMeteors();
+        updateParticles();
+        drawMeteors();
+        drawParticles();
+        
+        requestAnimationFrame(animate);
+      }
+      
+      setInterval(createMeteor, config.spawnInterval);
+      
+      animate();
+      
+      for (let i = 0; i < 5; i++) {
+        createMeteor();
+      }
+    })();
+  </script>
 </body>
 
 </html>

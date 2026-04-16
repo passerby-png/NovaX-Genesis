@@ -383,6 +383,7 @@
           .toggleClass("active");
       });
 
+      
       $(".mobile-button").on("click", function () {
         $(this)
           .closest("#header_main")

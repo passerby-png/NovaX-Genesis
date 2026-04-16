@@ -1,8 +1,8 @@
 /**
-  * 名称: NovaX Genesis | NFT 市场
+  * 名称: NovaX Genesis 
   * 版本: 1.0.0
   * 作者: NovaX Genesis Team
-  * 描述: 现代 NFT 市场平台
+  * 描述: 现代 NFT 平台
 */
 @import "../icon/icon.css";
 @import "shortcodes.css";
@@ -1071,6 +1071,381 @@ label.error {
   height: 100%;
 }
 
+/* 科技感流星背景 */
+.meteor-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  overflow: hidden;
+}
+
+/* 时光穿梭效果 */
+.time-warp {
+  position: fixed;
+  top: 0;
+  width: 600px;
+  height: 100vh;
+  z-index: -1;
+  overflow: hidden;
+  perspective: 1500px;
+}
+
+.time-warp.left {
+  left: 0;
+}
+
+.time-warp.right {
+  right: 0;
+}
+
+/* 主要光线效果 */
+.time-warp .main-beam {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(219, 39, 119, 0.9) 30%,
+    rgba(59, 130, 246, 0.9) 50%,
+    rgba(219, 39, 119, 0.9) 70%,
+    transparent 100%
+  );
+  transform: translateY(-50%);
+  animation: mainBeam 2s linear infinite;
+  box-shadow: 0 0 40px rgba(219, 39, 119, 0.9), 0 0 80px rgba(59, 130, 246, 0.7);
+}
+
+.time-warp.left .main-beam {
+  left: -100%;
+  animation-direction: normal;
+}
+
+.time-warp.right .main-beam {
+  right: -100%;
+  animation-direction: reverse;
+}
+
+/* 辅助光线 */
+.time-warp .secondary-beam {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(168, 85, 247, 0.7) 50%,
+    transparent 100%
+  );
+  transform: translateY(-50%) translateY(-30px);
+  animation: secondaryBeam 3s linear infinite;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
+}
+
+.time-warp .secondary-beam:nth-child(2) {
+  transform: translateY(-50%) translateY(30px);
+  animation-delay: 1.5s;
+}
+
+/* 网格线条 */
+.time-warp .grid-lines {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+}
+
+/* 水平线条 */
+.time-warp .horizontal-line {
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(59, 130, 246, 0.8) 50%,
+    transparent 100%
+  );
+  animation: horizontalLine 2.5s linear infinite;
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.8);
+}
+
+.time-warp .horizontal-line:nth-child(1) {
+  top: 10%;
+  animation-delay: 0s;
+}
+
+.time-warp .horizontal-line:nth-child(2) {
+  top: 30%;
+  animation-delay: 0.3s;
+}
+
+.time-warp .horizontal-line:nth-child(3) {
+  top: 50%;
+  animation-delay: 0.6s;
+}
+
+.time-warp .horizontal-line:nth-child(4) {
+  top: 70%;
+  animation-delay: 0.9s;
+}
+
+.time-warp .horizontal-line:nth-child(5) {
+  top: 90%;
+  animation-delay: 1.2s;
+}
+
+/* 垂直线条 */
+.time-warp .vertical-line {
+  position: absolute;
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(219, 39, 119, 0.8) 50%,
+    transparent 100%
+  );
+  animation: verticalLine 2s linear infinite;
+  box-shadow: 0 0 15px rgba(219, 39, 119, 0.8);
+}
+
+.time-warp.left .vertical-line {
+  left: 50%;
+}
+
+.time-warp.right .vertical-line {
+  right: 50%;
+}
+
+/* 近景线条 */
+.time-warp .vertical-line.near {
+  width: 3px;
+  opacity: 0.9;
+  box-shadow: 0 0 25px rgba(219, 39, 119, 0.9);
+}
+
+/* 中景线条 */
+.time-warp .vertical-line.mid {
+  width: 2px;
+  opacity: 0.7;
+  box-shadow: 0 0 20px rgba(219, 39, 119, 0.7);
+}
+
+/* 远景线条 */
+.time-warp .vertical-line.far {
+  width: 1px;
+  opacity: 0.5;
+  box-shadow: 0 0 15px rgba(219, 39, 119, 0.5);
+}
+
+/* 线条位置和动画延迟 */
+.time-warp .vertical-line:nth-child(6) {
+  transform: translateX(-200px) translateZ(0);
+  animation-delay: 0s;
+}
+
+.time-warp .vertical-line:nth-child(7) {
+  transform: translateX(-150px) translateZ(-100px);
+  animation-delay: 0.1s;
+}
+
+.time-warp .vertical-line:nth-child(8) {
+  transform: translateX(-100px) translateZ(-200px);
+  animation-delay: 0.2s;
+}
+
+.time-warp .vertical-line:nth-child(9) {
+  transform: translateX(-50px) translateZ(-300px);
+  animation-delay: 0.3s;
+}
+
+.time-warp .vertical-line:nth-child(10) {
+  transform: translateX(0px) translateZ(0);
+  animation-delay: 0.4s;
+}
+
+.time-warp .vertical-line:nth-child(11) {
+  transform: translateX(50px) translateZ(-100px);
+  animation-delay: 0.5s;
+}
+
+.time-warp .vertical-line:nth-child(12) {
+  transform: translateX(100px) translateZ(-200px);
+  animation-delay: 0.6s;
+}
+
+.time-warp .vertical-line:nth-child(13) {
+  transform: translateX(150px) translateZ(-300px);
+  animation-delay: 0.7s;
+}
+
+.time-warp .vertical-line:nth-child(14) {
+  transform: translateX(200px) translateZ(0);
+  animation-delay: 0.8s;
+}
+
+/* 网格背景 */
+.time-warp .grid-background {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(59, 130, 246, 0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(219, 39, 119, 0.2) 1px, transparent 1px);
+  background-size: 30px 30px;
+  animation: gridBackground 8s linear infinite;
+  transform: perspective(1000px) rotateY(45deg);
+}
+
+.time-warp.right .grid-background {
+  transform: perspective(1000px) rotateY(-45deg);
+  animation-direction: reverse;
+}
+
+/* 发光效果 */
+.time-warp .glow-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(219, 39, 119, 0.4) 0%, rgba(59, 130, 246, 0.4) 50%, transparent 70%);
+  transform: translate(-50%, -50%);
+  animation: glowEffect 3s ease-in-out infinite;
+  border-radius: 50%;
+}
+
+/* 粒子效果 */
+.time-warp .particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background-color: rgba(221, 242, 71, 0.8);
+  border-radius: 50%;
+  animation: particle 4s linear infinite;
+  box-shadow: 0 0 10px rgba(221, 242, 71, 0.8);
+}
+
+
+
+/* 动画 */
+@keyframes mainBeam {
+  0% {
+    transform: translateY(-50%) translateX(0) scaleX(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%) translateX(100%) scaleX(1);
+    opacity: 0;
+  }
+}
+
+@keyframes secondaryBeam {
+  0% {
+    transform: translateY(-50%) translateX(0) scaleX(0.3);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%) translateX(100%) scaleX(0.8);
+    opacity: 0;
+  }
+}
+
+@keyframes horizontalLine {
+  0% {
+    transform: translateX(-100%) translateZ(0);
+    opacity: 0;
+    width: 1px;
+  }
+  10% {
+    opacity: 1;
+    width: 3px;
+  }
+  90% {
+    opacity: 1;
+    width: 3px;
+  }
+  100% {
+    transform: translateX(100%) translateZ(-300px);
+    opacity: 0;
+    width: 1px;
+  }
+}
+
+@keyframes verticalLine {
+  0% {
+    transform: translateY(-100%) translateZ(0);
+    opacity: 0;
+    width: 1px;
+  }
+  10% {
+    opacity: 1;
+    width: 3px;
+  }
+  90% {
+    opacity: 1;
+    width: 3px;
+  }
+  100% {
+    transform: translateY(100%) translateZ(-300px);
+    opacity: 0;
+    width: 1px;
+  }
+}
+
+@keyframes gridBackground {
+  0% {
+    transform: perspective(1000px) rotateY(45deg) translateX(-30px) translateY(-30px);
+  }
+  100% {
+    transform: perspective(1000px) rotateY(45deg) translateX(30px) translateY(30px);
+  }
+}
+
+@keyframes glowEffect {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.3);
+    opacity: 0.7;
+  }
+}
+
+@keyframes particle {
+  0% {
+    transform: translate(0, 0) translateZ(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(100px, 100px) translateZ(-200px);
+    opacity: 0;
+  }
+}
+
+
+
 /* 链接样式
 -------------------------------------------------------------- */
 a {
@@ -1104,6 +1479,9 @@ a:focus {
   width: 100%;
   border: none;
   padding-right: 0 !important;
+  transition: all 0.3s ease;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(10px);
 }
 
 #site-logo {
@@ -1125,7 +1503,7 @@ a:focus {
   gap: 28px;
   position: absolute;
   padding: 6px 0 7px 0;
-  right: 15px;
+  right: 90px;
   top: 0;
   justify-content: end;
   align-items: center;
@@ -1136,6 +1514,19 @@ a:focus {
   width: 30px;
   height: 30px;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.canvas:hover {
+  transform: scale(1.1);
+}
+
+.canvas span {
+  transition: all 0.3s ease;
+}
+
+.canvas:hover span {
+  background-color: #ddf247;
 }
 
 .canvas span,
@@ -1188,6 +1579,13 @@ a:focus {
 .header-search .show-search {
   font-size: 20px;
   line-height: 44px;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+
+.header-search .show-search:hover {
+  transform: scale(1.1);
+  color: #ddf247;
 }
 
 .header-search .top-search {
@@ -1236,6 +1634,12 @@ a:focus {
   line-height: 22px;
   font-weight: 500;
   color: #fff;
+  transition: all 0.3s ease;
+}
+
+#main-nav > ul > li > a:hover {
+  color: #ddf247;
+  transform: translateY(-2px);
 }
 
 #main-nav > ul > li.menu-item-has-children > a {

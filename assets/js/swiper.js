@@ -1,5 +1,6 @@
 var sliderinit = function () {
   // basic options for all sliders
+
   let defaults = {
     spaceBetween: 30,
     slidesPerView: 1,
@@ -13,9 +14,9 @@ var sliderinit = function () {
       let optionsData = swiper.dataset.swiper
         ? JSON.parse(swiper.dataset.swiper)
         : {};
-      // combine defaults and custom options
+        // 自动播放
       let options = {
-        ...defaults,
+        ...defaults,  // 自动播放
         ...optionsData,
       };
       // init
@@ -31,6 +32,10 @@ var swiper = new Swiper(".swiper-3d-7", {
   slidesPerView: 1,
   centeredSlides: true,
   freeMode: true,
+  autoplay: {
+    delay: 3000, // 3秒切换一次
+    disableOnInteraction: false, // 即使用户交互后也继续自动轮播
+  },
   watchSlidesProgress: true,
   effect: "coverflow",
   grabCursor: true,
@@ -43,8 +48,8 @@ var swiper = new Swiper(".swiper-3d-7", {
     slideShadows: false,
   },
   navigation: {
-    nextEl: ".next-3d",
-    prevEl: ".prev-3d",
+    nextEl: ".prev-3d",
+    prevEl: ".next-3d",
   },
   pagination: {
     el: ".swiper-pagination",
